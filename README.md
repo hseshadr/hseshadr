@@ -25,6 +25,16 @@ with any other product or company named "EdgeProc."*
 
 - 📦 GitHub: **https://github.com/hseshadr/edge-proc**
 
+### AlmaMesh — a full Vedic astrology app that runs in your browser tab
+
+Give it a birth date, time, and place; it computes the chart **on your device** — the Python
+astronomy engine (Skyfield over NASA JPL ephemerides) runs in-browser via **Pyodide/WebAssembly**,
+byte-identical to the server build. Deterministic math, transparent assumptions, no accounts,
+offline after first load. AI narration is optional and never touches the chart math.
+
+- 🔗 Live app: **https://almamesh.com**
+- 📦 GitHub: **https://github.com/hseshadr/almamesh**
+
 ## The common pattern
 
 ```txt
