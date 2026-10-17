@@ -17,24 +17,28 @@ something you have to take on faith.
 
 ## What's live
 
-| Product | What it does | Try it |
-|---|---|---|
-| **AlmaMesh** | A full Vedic astrology app: enter a birth date, time, and place and it computes the chart on your device, with a real astronomy engine running in the browser. Free, no account, works offline after first load. | [almamesh.com](https://almamesh.com) |
-| **AML-Filter** | Sanctions-list screening — the "is this name on a watchlist?" check banks run — done entirely in your browser: fuzzy name matching over signed watchlists, with an explanation for every match. | [aml-filter.com](https://aml-filter.com) |
-| **EdgeReco** | A store's search and "you might also like", running inside the shopper's browser tab — after a one-time catalog sync there are no per-query server calls. | [edge-reco.com](https://edge-reco.com) |
+| Product | What it does | Try it | Source |
+|---|---|---|---|
+| **AlmaMesh** | A full Vedic astrology app: enter a birth date, time, and place and it computes the chart on your device, with a real astronomy engine running in the browser. Free, no account, works offline after first load. | [almamesh.com](https://almamesh.com) | [gainratio/almamesh](https://github.com/gainratio/almamesh) |
+| **AML-Filter** | Sanctions-list screening — the "is this name on a watchlist?" check banks run — done entirely in your browser: fuzzy name matching over signed watchlists, with an explanation for every match. | [aml-filter.com](https://aml-filter.com) | [gainratio/aml-filter](https://github.com/gainratio/aml-filter) |
+| **EdgeReco** | A store's search and "you might also like", running inside the shopper's browser tab — after a one-time catalog sync there are no per-query server calls. | [edge-reco.com](https://edge-reco.com) | [gainratio/edge-reco](https://github.com/gainratio/edge-reco) |
 
 ### Published packages
 
 | Package | What it does | Get it |
 |---|---|---|
-| `avow` (Python) | Signed, offline-verifiable receipts: wrap a result in an envelope anyone can later check for tampering using only a public key. | [PyPI](https://pypi.org/project/avow/) |
-| `@edgeproc/avow` (TypeScript) | The browser side of the same receipts — byte-for-byte compatible with the Python version, proven by a shared test suite. | [npm](https://www.npmjs.com/package/@edgeproc/avow) |
-| `@edgeproc/privacy-core` (TypeScript) | Redacts private text on your device before it reaches an AI model, then restores the real values locally in the reply — sending raw text is a compile error, not a policy. | [npm](https://www.npmjs.com/package/@edgeproc/privacy-core) |
+| `edge-proc` (Python) | Publishes data or `.sqlite` databases as signed, content-addressed bundles and searches them offline. | [PyPI](https://pypi.org/project/edge-proc/) · [GitHub](https://github.com/gainratio/edge-proc) |
+| `@gainratio/browser` (TypeScript) | Verifies and syncs `edge-proc` bundles in a browser Web Worker, with OPFS SQLite FTS5, JSON1, and vector search. | [npm](https://www.npmjs.com/package/@gainratio/browser) · [GitHub](https://github.com/gainratio/edgeproc-browser) |
+| `edgeproc-core` (Python) | Multi-tenant vector-index partitioning protocol and canonical error catalog underneath `edge-proc` and `EdgeReco`. | [PyPI](https://pypi.org/project/edgeproc-core/) · [GitHub](https://github.com/gainratio/edgeproc-core) |
+| `avow` (Python) | Signed, offline-verifiable receipts: wrap a result in an envelope anyone can later check for tampering using only a public key. | [PyPI](https://pypi.org/project/avow/) · [GitHub](https://github.com/gainratio/avow) |
+| `@gainratio/avow` (TypeScript) | The browser side of the same receipts — byte-for-byte compatible with the Python version, proven by a shared test suite. | [npm](https://www.npmjs.com/package/@gainratio/avow) · [GitHub](https://github.com/gainratio/avow) |
+| `@gainratio/privacy-core` (TypeScript) | Redacts private text on your device before it reaches an AI model, then restores the real values locally in the reply — sending raw text is a compile error, not a policy. | [npm](https://www.npmjs.com/package/@gainratio/privacy-core) · [GitHub](https://github.com/gainratio/privacy-core) |
+| `@gainratio/errors` (TypeScript) | Typed error registry with RFC 9457 Problem Details and i18n, matching `edgeproc-core` error codes. | [npm](https://www.npmjs.com/package/@gainratio/errors) · [GitHub](https://github.com/gainratio/errors) |
+| `assay-engine` (Python) | Offline evaluation harness for ranking and retrieval quality gates. | [PyPI](https://pypi.org/project/assay-engine/) · [GitHub](https://github.com/gainratio/assay) |
 
 ### Under the hood (source)
 
-- [edge-proc](https://github.com/hseshadr/edge-proc) — ships data to devices as signed, content-addressed bundles; every device proves a file is genuine before using it, then syncs only what changed.
-- [shared-libs-python](https://github.com/hseshadr/shared-libs-python) — the vector-index foundation layer (partitioning protocol + index management) under edge-proc and EdgeReco.
+- [gainratio](https://github.com/gainratio) — the organization hosting all public source repositories, shared Dagger CI modules ([gainratio/ci](https://github.com/gainratio/ci)), and release workflows.
 
 ## How I build
 
